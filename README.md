@@ -6,7 +6,7 @@ This platform aims to simplify in a modular package everything a new streamer mi
 
 ---
 
-##Structure
+## Structure
 
 The base structure is as follows:
 
@@ -18,7 +18,7 @@ The base structure is as follows:
 
 ---
 
-##Functionalities
+## Functionalities
 
 - Ban/kick bot for Twitch and Discord
 - Poll creator, manager and visualizer

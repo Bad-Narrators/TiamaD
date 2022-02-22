@@ -40,3 +40,5 @@ The base structure is as follows:
 - Crowd dice rolls
 
 - Viewers suggestions (`those regard various topics that will be split both in functionalities and categories, for example NPC suggestions, stream quality suggestions, feature suggestions, bot suggestions, etc.`)
+
+- Multiple language support (`initially English and Italian`)

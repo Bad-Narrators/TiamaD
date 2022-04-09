@@ -39,8 +39,8 @@ public class PollController {
         return pollRepository.getPoll(UUID.fromString(pollId));
     }
 
-    @GetMapping("/getPollsFromTarget")
-    public List<Poll> getPollsFromTarget(String target) {
-        return pollRepository.getPollsFromTarget(target);
+    @GetMapping("/getPollsFByTarget")
+    public List<Poll> getPollsByTarget(String target) {
+        return pollRepository.getPollsByTarget(target);
     }
 }

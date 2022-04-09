@@ -18,7 +18,7 @@ public class PollRepository {
         return polls.stream().filter(poll -> poll.getId().equals(pollId)).findFirst().orElse(null);
     }
 
-    public List<Poll> getPollsFromTarget(String target) {
+    public List<Poll> getPollsByTarget(String target) {
         return polls.stream().filter(poll -> poll.getTargets().contains(target))
                 .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
     }

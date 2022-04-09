@@ -1,4 +1,4 @@
-package com.badnarrators.tiamad.polls.entity;
+package com.badnarrators.tiamad.poll;
 
 import java.util.concurrent.atomic.LongAdder;
 
@@ -11,6 +11,10 @@ public class PollVote {
         this.count = new LongAdder();
     }
 
+    public void vote() {
+        this.count.increment();
+    }
+
     public String getAnswer() {
         return answer;
     }
@@ -19,7 +23,4 @@ public class PollVote {
         return count;
     }
 
-    public void vote() {
-        this.count.increment();
-    }
 }

@@ -1,4 +1,4 @@
-package com.badnarrators.tiamad.polls.entity;
+package com.badnarrators.tiamad.poll;
 
 import java.util.List;
 import java.util.Map;
@@ -17,6 +17,10 @@ public class Poll {
         this.targets = targets;
     }
 
+    public void vote(int id) {
+        this.answers.get(id).vote();
+    }
+
     public UUID getId() {
         return id;
     }
@@ -27,10 +31,6 @@ public class Poll {
 
     public Map<Integer, PollVote> getAnswers() {
         return answers;
-    }
-
-    public void vote(int id) {
-        this.answers.get(id).vote();
     }
 
     public List<String> getTargets() {

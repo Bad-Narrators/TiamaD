@@ -2,7 +2,6 @@ package com.badnarrators.tiamad.poll;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 import org.springframework.stereotype.Component;
 
@@ -23,7 +22,7 @@ public class PollRepository {
                 .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
     }
 
-    public Poll addPoll(String question, Map<Integer, PollVote> answers, List<String> targets) {
+    public Poll addPoll(String question, List<String> answers, List<String> targets) {
         Poll poll = new Poll(question, answers, targets);
         this.polls.add(poll);
 

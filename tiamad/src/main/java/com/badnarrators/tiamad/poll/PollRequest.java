@@ -1,14 +1,13 @@
 package com.badnarrators.tiamad.poll;
 
 import java.util.List;
-import java.util.Map;
 
 public class PollRequest {
     private String question;
-    private Map<Integer, PollVote> answers;
+    private List<String> answers;
     private List<String> targets;
 
-    public PollRequest(String question, Map<Integer, PollVote> answers, List<String> targets) {
+    public PollRequest(String question, List<String> answers, List<String> targets) {
         this.question = question;
         this.answers = answers;
         this.targets = targets;
@@ -22,11 +21,11 @@ public class PollRequest {
         this.question = question;
     }
 
-    public Map<Integer, PollVote> getAnswers() {
+    public List<String> getAnswers() {
         return answers;
     }
 
-    public void setAnswers(Map<Integer, PollVote> answers) {
+    public void setAnswers(List<String> answers) {
         this.answers = answers;
     }
 

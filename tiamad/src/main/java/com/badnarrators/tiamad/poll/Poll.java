@@ -1,24 +1,29 @@
 package com.badnarrators.tiamad.poll;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 public class Poll {
     private UUID id;
     private String question;
-    private Map<Integer, PollVote> answers;
+    private List<PollVote> answers;
     private List<String> targets;
 
-    public Poll(String question, Map<Integer, PollVote> answers, List<String> targets) {
+    public Poll(String question, List<String> answers, List<String> targets) {
         this.id = UUID.randomUUID();
         this.question = question;
-        this.answers = answers;
         this.targets = targets;
+
+        this.answers = new ArrayList<>();
+
+        for (String answer : answers) {
+            this.answers.add(new PollVote(answer));
+        }
     }
 
     public void vote(int id) {
-        this.answers.get(id).vote();
+        this.answers.get(id - 1).vote();
     }
 
     public UUID getId() {
@@ -29,7 +34,7 @@ public class Poll {
         return question;
     }
 
-    public Map<Integer, PollVote> getAnswers() {
+    public List<PollVote> getAnswers() {
         return answers;
     }
 

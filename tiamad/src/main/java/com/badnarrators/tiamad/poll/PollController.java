@@ -2,6 +2,7 @@ package com.badnarrators.tiamad.poll;
 
 import java.util.List;
 import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,14 +20,14 @@ public class PollController {
     private PollRepository pollRepository;
 
     @PostMapping("/addPoll")
-    public Poll getPoll(@RequestBody PollRequest pollRequest) {
-        return pollRepository.addPoll(pollRequest.getQuestion(), pollRequest.getAnswers(),
-                pollRequest.getTargets());
+    public Poll addPoll(@RequestBody PollRequest pollRequest) {
+        return pollRepository.addPoll(pollRequest.getQuestion(), pollRequest.getAnswers(), pollRequest.getTargets(),
+                pollRequest.getDestructionTime());
     }
 
-    @PutMapping("/updatePoll")
-    public Poll updatePoll(String pollId, int answerId) {
-        return pollRepository.updatePoll(UUID.fromString(pollId), answerId);
+    @PutMapping("/votePoll")
+    public Poll votePoll(String pollId, int answerId) {
+        return pollRepository.votePoll(UUID.fromString(pollId), answerId);
     }
 
     @DeleteMapping("/deletePoll")
@@ -39,7 +40,7 @@ public class PollController {
         return pollRepository.getPoll(UUID.fromString(pollId));
     }
 
-    @GetMapping("/getPollsFByTarget")
+    @GetMapping("/getPollsByTarget")
     public List<Poll> getPollsByTarget(String target) {
         return pollRepository.getPollsByTarget(target);
     }

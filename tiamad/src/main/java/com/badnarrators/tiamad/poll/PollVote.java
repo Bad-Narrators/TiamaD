@@ -22,5 +22,4 @@ public class PollVote {
     public LongAdder getCount() {
         return count;
     }
-
 }

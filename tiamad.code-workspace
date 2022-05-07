@@ -6,10 +6,10 @@
   ],
   "settings": {
     "java.dependency.packagePresentation": "hierarchical",
-    "java.format.settings.url": ".vscode/java-formatter.xml",
     "[java]": {
       "editor.tabSize": 4
     },
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.format.settings.url": "GoogleStyle.xml"
   }
 }
